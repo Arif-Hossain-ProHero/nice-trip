@@ -1,0 +1,15 @@
+.carousel-container img {
+  height: 80vh;
+}
+.carousel-caption {
+  top: 50%;
+}
+.input-group {
+  width: 30%;
+}
+.booking {
+  background-color: beige;
+}
+.input-label {
+  background-color: green;
+}

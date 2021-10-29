@@ -1,0 +1,11 @@
+.menu a {
+  border-bottom: 1px solid ghostwhite;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.footer-container {
+  background-image: url("https://stoqk.com/wp-content/uploads/2017/03/Sea-Beach-Wallpaper-HD.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

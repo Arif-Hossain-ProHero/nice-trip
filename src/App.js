@@ -4,6 +4,7 @@ import Navbar from "./pages/Home/Navbar/Navbar";
 import Header from "./pages/Home/Header/Header";
 import Footer from "./pages/Home/Footer/Footer";
 import Packages from "./pages/Home/Packages/Packages";
+import Stat from "./pages/Stat/Stat";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar></Navbar>
       <Header></Header>
       <Packages></Packages>
+      <Stat></Stat>
       <Footer></Footer>
     </div>
   );

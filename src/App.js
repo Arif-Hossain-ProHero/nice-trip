@@ -6,32 +6,38 @@ import Order from "./pages/Order/Order";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import ManageOrders from "./pages/ManageOrders/ManageOrders";
 import AddPackage from "./pages/AddPackage/AddPackage";
+import Login from "./pages/Login/Login";
+import AuthProvider from "./context/AuthProvider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <BrowserRouter>
         <Navbar></Navbar>
         <Switch>
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route path="/packages/:id">
+          <PrivateRoute path="/packages/:id">
             <Order></Order>
-          </Route>
-          <Route path="/my-orders">
+          </PrivateRoute>
+          <PrivateRoute path="/my-orders">
             <MyOrders></MyOrders>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login></Login>
           </Route>
-          <Route path="/manage-orders">
+          <PrivateRoute path="/manage-orders">
             <ManageOrders></ManageOrders>
-          </Route>
-          <Route path="/add-package">
+          </PrivateRoute>
+          <PrivateRoute path="/add-package">
             <AddPackage></AddPackage>
-          </Route>
+          </PrivateRoute>
         </Switch>
         <Footer></Footer>
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 

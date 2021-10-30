@@ -5,6 +5,7 @@ import Footer from "../src/pages/Home/Footer/Footer";
 import Order from "./pages/Order/Order";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import ManageOrders from "./pages/ManageOrders/ManageOrders";
+import AddPackage from "./pages/AddPackage/AddPackage";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/manage-orders">
             <ManageOrders></ManageOrders>
+          </Route>
+          <Route path="/add-package">
+            <AddPackage></AddPackage>
           </Route>
         </Switch>
         <Footer></Footer>

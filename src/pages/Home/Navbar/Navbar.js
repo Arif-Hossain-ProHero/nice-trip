@@ -38,9 +38,10 @@ const Navbar = () => {
                   Manage Orders
                 </Link>
               </li>
-
               <li class="nav-item">
-                <a class="nav-link">Disabled</a>
+                <Link to="/add-package" className="nav-link">
+                  Add Package
+                </Link>
               </li>
             </ul>
             <form class="d-flex">

@@ -12,6 +12,7 @@ const Blogs = () => {
   }, []);
   return (
     <div className="container">
+      <h1>Blogs</h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {blogs.map((blog) => (
           <Blog key={blog.key} blog={blog}></Blog>

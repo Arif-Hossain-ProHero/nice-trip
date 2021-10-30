@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Stat from "../../Stat/Stat";
 import Package from "../Package/Package";
 
 const Packages = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch("./fakedb.json")
+    fetch("http://localhost:5000/packages")
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);

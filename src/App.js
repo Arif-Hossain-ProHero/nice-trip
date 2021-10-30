@@ -1,21 +1,28 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Navbar from "./pages/Home/Navbar/Navbar";
-import Header from "./pages/Home/Header/Header";
-import Footer from "./pages/Home/Footer/Footer";
-import Packages from "./pages/Home/Packages/Packages";
-import Stat from "./pages/Stat/Stat";
-import Blogs from "./pages/Home/Blogs/Blogs";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "../src/pages/Home/Home/Home";
+import Navbar from "../src/pages/Home/Navbar/Navbar";
+import Footer from "../src/pages/Home/Footer/Footer";
+import Order from "./pages/Order/Order";
+import MyOrders from "./pages/MyOrders/MyOrders";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar></Navbar>
-      <Header></Header>
-      <Packages></Packages>
-      <Stat></Stat>
-      <Blogs></Blogs>
-      <Footer></Footer>
+    <div>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/packages/:id">
+            <Order></Order>
+          </Route>
+          <Route path="/my-orders">
+            <MyOrders></MyOrders>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }

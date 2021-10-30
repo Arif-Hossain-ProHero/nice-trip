@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Package.css";
 
 const Package = (props) => {
-  const { title, description, img, price, packages } = props.pack;
+  const { _id, title, description, img, price, packages } = props.pack;
   return (
     <div class="card col mb-3" style={{ maxWidth: "540px" }}>
       <div class="row g-0">
@@ -17,7 +18,9 @@ const Package = (props) => {
               <small class="text-muted">{price}</small>
             </p>
           </div>
-          <button className="btn btn-primary">Book Now</button>
+          <Link to={`/packages/${_id}`}>
+            <button className="btn btn-primary">Book Now</button>
+          </Link>
         </div>
       </div>
     </div>

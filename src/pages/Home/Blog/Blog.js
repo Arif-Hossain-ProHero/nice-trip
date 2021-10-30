@@ -13,7 +13,7 @@ const Blog = (props) => {
         <div class="card-footer">
           <small class="text-muted">{date}</small>
         </div>
-        <button className="btn bt-primary">Read More</button>
+        <button className="btn btn-primary">Read More</button>
       </div>
     </div>
   );

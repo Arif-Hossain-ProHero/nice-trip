@@ -4,6 +4,7 @@ import Navbar from "../src/pages/Home/Navbar/Navbar";
 import Footer from "../src/pages/Home/Footer/Footer";
 import Order from "./pages/Order/Order";
 import MyOrders from "./pages/MyOrders/MyOrders";
+import ManageOrders from "./pages/ManageOrders/ManageOrders";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/my-orders">
             <MyOrders></MyOrders>
+          </Route>
+          <Route path="/manage-orders">
+            <ManageOrders></ManageOrders>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -59,13 +59,13 @@ const Order = () => {
         <div className="w-50">
           <form onSubmit={handleSubmit}>
             {/* user name */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 User Name
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 ref={nameRef}
                 value={user.displayName || ""}
@@ -73,13 +73,13 @@ const Order = () => {
               />
             </div>
             {/* email */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Email
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 ref={emailRef}
                 value={user.email || ""}
@@ -87,49 +87,49 @@ const Order = () => {
               />
             </div>
             {/* address */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Address
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Address"
               />
             </div>
             {/* phone */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Phone Number
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Phone Number"
               />
             </div>
             {/* date */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Date
               </label>
               <input
                 type="date"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Date"
               />
             </div>
             {/* pacakge title */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Package Title
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 value={pack.title || ""}
                 ref={titleRef}
@@ -137,13 +137,13 @@ const Order = () => {
               />
             </div>
             {/* price */}
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Price
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 value={pack.price || ""}
                 ref={priceRef}

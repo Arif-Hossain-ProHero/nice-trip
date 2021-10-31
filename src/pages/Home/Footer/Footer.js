@@ -18,14 +18,14 @@ const Footer = () => {
             </p>
             <div className="fst-italic contact">
               <address>
-                <i class="fas fa-map-marker-alt pe-2"></i>4th Floor, Mahboob's
-                Building, Mirpur-12
+                <i className="fas fa-map-marker-alt pe-2"></i>4th Floor,
+                Mahboob's Building, Mirpur-12
               </address>
               <p>
-                <i class="fas fa-phone-alt pe-2"></i>+880-XXXXXXXXXX
+                <i className="fas fa-phone-alt pe-2"></i>+880-XXXXXXXXXX
               </p>
               <p>
-                <i class="far fa-envelope pe-2"></i>nice-trip@support.com
+                <i className="far fa-envelope pe-2"></i>nice-trip@support.com
               </p>
             </div>
           </div>
@@ -34,31 +34,32 @@ const Footer = () => {
         <div className="col">
           <div>
             <h3 className="text-center text-white">SEND FEEDBACK</h3>
-            <div class="mb-3">
+            <div className="mb-3">
               <label
-                for="exampleFormControlInput1"
-                class="form-label text-white"
+                htmlFor="exampleFormControlInput1"
+                className="form-label text-white"
               >
                 Email address
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="name@example.com"
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <label
-                for="exampleFormControlTextarea1"
-                class="form-label text-white"
+                htmlFor="exampleFormControlTextarea1"
+                className="form-label text-white"
               >
-                Example textarea
+                Feedback
               </label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
+                placeholder="Leave a Message"
               ></textarea>
             </div>
             <button className="btn regular-btn">SEND</button>

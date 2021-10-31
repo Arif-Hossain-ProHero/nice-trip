@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useAuth();
-
+  //fetch all data from orders API
   useEffect(() => {
     fetch("http://localhost:5000/orders")
       .then((res) => res.json())

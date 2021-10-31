@@ -39,13 +39,13 @@ const AddPackage = () => {
         <form onSubmit={handleSubmit}>
           <div className="container mx-auto row row-cols-1 row-cols-md-2 g-4">
             {/* title */}
-            <div class="mb-3 col">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3 col">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Package Title
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 ref={titleRef}
                 required
@@ -53,13 +53,13 @@ const AddPackage = () => {
               />
             </div>
             {/* price */}
-            <div class="mb-3 col">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3 col">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Package Price
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 ref={priceRef}
                 required
@@ -67,13 +67,13 @@ const AddPackage = () => {
               />
             </div>
             {/* duration */}
-            <div class="mb-3 col">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3 col">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Duration
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="2 Days - 3 Nights"
                 ref={durationRef}
@@ -81,13 +81,13 @@ const AddPackage = () => {
               />
             </div>
             {/* Image Url */}
-            <div class="mb-3 col">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3 col">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Image URL
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Image URL"
                 ref={imageRef}
@@ -95,13 +95,13 @@ const AddPackage = () => {
               />
             </div>
             {/* Description */}
-            <div class="mb-3 col">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-3 col">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Description
               </label>
               <textarea
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Description"
                 ref={descriptionRef}
@@ -109,6 +109,7 @@ const AddPackage = () => {
               />
             </div>
           </div>
+          {/* submit button */}
           <div className="text-center">
             <input
               className="btn btn-primary"

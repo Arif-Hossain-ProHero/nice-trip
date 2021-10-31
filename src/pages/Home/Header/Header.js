@@ -8,15 +8,15 @@ const Header = () => {
       <div className="carousel-container">
         <div
           id="carouselExampleCaptions"
-          class="carousel slide"
+          className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-indicators">
+          <div className="carousel-indicators">
             <button
               type="button"
               data-bs-target="#carouselExampleCaptions"
               data-bs-slide-to="0"
-              class="active"
+              className="active"
               aria-current="true"
               aria-label="Slide 1"
             ></button>
@@ -33,14 +33,14 @@ const Header = () => {
               aria-label="Slide 3"
             ></button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <img
                 src="https://theluxurytravelexpert.com/wp-content/uploads/2019/04/BEST-BEACH-DESTINATIONS-IN-THE-WORLD.jpg"
-                class="d-block w-100"
+                className="d-block w-100"
                 alt="..."
               />
-              <div class="carousel-caption d-none d-md-block fs-5">
+              <div className="carousel-caption d-none d-md-block fs-5">
                 <h2 className="fw-bold text-white">
                   WELCOME TO <span className="text-warning">NICE TRIP</span>{" "}
                   TOURISM COMPANY
@@ -53,13 +53,13 @@ const Header = () => {
                 </p>
               </div>
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <img
                 src="https://www.discoverwalks.com/blog/wp-content/uploads/2016/07/eiffel-big-1280x720.jpg"
-                class="d-block w-100"
+                className="d-block w-100"
                 alt="..."
               />
-              <div class="carousel-caption d-none d-md-block fs-5">
+              <div className="carousel-caption d-none d-md-block fs-5">
                 <h2 className="text-warning fw-bold">
                   WE DELIVER THE BEST SERVICES AROUND THE WORLD
                 </h2>
@@ -70,13 +70,13 @@ const Header = () => {
                 </p>
               </div>
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <img
                 src="https://static.toiimg.com/thumb/86844352/india-travel-visa.jpg?width=1200&height=900"
-                class="d-block w-100"
+                className="d-block w-100"
                 alt="..."
               />
-              <div class="carousel-caption d-none d-md-block fs-5">
+              <div className="carousel-caption d-none d-md-block fs-5">
                 <h2 className="text-white fw-bold">
                   Best-selling Holiday Destinations
                 </h2>
@@ -88,22 +88,28 @@ const Header = () => {
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </div>
@@ -113,15 +119,15 @@ const Header = () => {
         <div className="container mx-auto row row-cols-1 row-cols-md-3 g-4">
           <div>
             <input
-              class="form-control"
+              className="form-control"
               type="date"
               placeholder="Default input"
               aria-label="default input example"
             ></input>
           </div>
-          <div class="input-group mb-3 col">
-            <select class="form-select" id="inputGroupSelect01">
-              <option selected>Choose City</option>
+          <div className="input-group mb-3 col">
+            <select className="form-select" id="inputGroupSelect01">
+              <option defaultValue>Choose City</option>
               <option value="1">Cox-Bazar</option>
               <option value="2">Male-Maldives</option>
               <option value="3">Paris-France</option>
@@ -129,15 +135,15 @@ const Header = () => {
               <option value="3">Bangkok-Thailand</option>
             </select>
             <label
-              class="input-label input-group-text"
-              for="inputGroupSelect01"
+              className="input-label input-group-text"
+              htmlFor="inputGroupSelect01"
             >
               Options
             </label>
           </div>
-          <div class="input-group mb-3 col">
-            <select class="form-select" id="inputGroupSelect02">
-              <option selected>Choose Category</option>
+          <div className="input-group mb-3 col">
+            <select className="form-select" id="inputGroupSelect02">
+              <option defaultValue>Choose Category</option>
               <option value="1">Business</option>
               <option value="2">Family</option>
               <option value="3">Honeymoon</option>
@@ -145,15 +151,15 @@ const Header = () => {
               <option value="3">Adventure</option>
             </select>
             <label
-              class="input-label input-group-text"
-              for="inputGroupSelect02"
+              className="input-label input-group-text"
+              htmlFor="inputGroupSelect02"
             >
               Options
             </label>
           </div>
-          <div class="input-group mb-3 col">
-            <select class="form-select" id="inputGroupSelect02">
-              <option selected>Min Price</option>
+          <div className="input-group mb-3 col">
+            <select className="form-select" id="inputGroupSelect02">
+              <option defaultValue>Min Price</option>
               <option value="1">$300</option>
               <option value="2">$450</option>
               <option value="3">$700</option>
@@ -161,15 +167,15 @@ const Header = () => {
               <option value="3">$1500</option>
             </select>
             <label
-              class="input-label input-group-text"
-              for="inputGroupSelect02"
+              className="input-label input-group-text"
+              htmlFor="inputGroupSelect02"
             >
               Options
             </label>
           </div>
-          <div class="input-group mb-3 col">
-            <select class="form-select" id="inputGroupSelect02">
-              <option selected>Max Price</option>
+          <div className="input-group mb-3 col">
+            <select className="form-select" id="inputGroupSelect02">
+              <option defaultValue>Max Price</option>
               <option value="1">$800</option>
               <option value="2">$1200</option>
               <option value="3">$2000</option>
@@ -177,8 +183,8 @@ const Header = () => {
               <option value="3">$3000</option>
             </select>
             <label
-              class="input-label input-group-text"
-              for="inputGroupSelect02"
+              className="input-label input-group-text"
+              htmlFor="inputGroupSelect02"
             >
               Options
             </label>

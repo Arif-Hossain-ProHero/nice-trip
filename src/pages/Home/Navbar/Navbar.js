@@ -10,10 +10,10 @@ const Navbar = () => {
   };
   return (
     <div className="navbar-container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo03"
@@ -21,26 +21,26 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
           <Link to="/" className="navbar-brand fw-bold text-warning ">
             NICE TRIP
           </Link>
 
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
                 <Link to="/" className="nav-link active fw-bold text-success">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/my-orders" className="nav-link text-success fw-bold">
                   My Orders
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   to="/manage-orders"
                   className="nav-link text-success fw-bold"
@@ -48,7 +48,7 @@ const Navbar = () => {
                   Manage Orders
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   to="/add-package"
                   className="nav-link text-success fw-bold"
@@ -57,13 +57,13 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <div class="d-flex navbar-nav mb-2 mb-lg-0 me-5">
+            <div className="d-flex navbar-nav mb-2 mb-lg-0 me-5">
               {user.email ? (
                 <button onClick={handleLogout} className="btn btn-success me-2">
                   Logout
                 </button>
               ) : (
-                <li class="nav-item">
+                <li className="nav-item">
                   <Link to="/login" className="nav-link text-warning">
                     Login
                   </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
               )}
               <div className="mt-2 text-warning">
                 <span>
-                  <i class="fas fa-user"></i>
+                  <i className="fas fa-user"></i>
                 </span>
                 {user.email ? user.displayName.toUpperCase() : ""}
               </div>

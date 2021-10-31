@@ -15,7 +15,7 @@ const Blogs = () => {
       <h1 className="text-center mb-5">Blogs</h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {blogs.map((blog) => (
-          <Blog key={blog.key} blog={blog}></Blog>
+          <Blog key={blog._id} blog={blog}></Blog>
         ))}
       </div>
     </div>

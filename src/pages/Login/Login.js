@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
@@ -21,11 +21,11 @@ const Login = () => {
   };
   return (
     <div className="d-flex justify-content-center align-content-center">
-      <div class="card" style={{ width: "25rem" }}>
-        <div class="card-body">
-          <h5 class="card-title text-center py-4">PLEASE LOGIN</h5>
-          <div class="card-text text-center">
-            <i class="fas fa-user-tie fs-1 text-primary"></i>
+      <div className="card" style={{ width: "25rem" }}>
+        <div className="card-body">
+          <h5 className="card-title text-center py-4">PLEASE LOGIN</h5>
+          <div className="card-text text-center">
+            <i className="fas fa-user-tie fs-1 text-primary"></i>
           </div>
           <div className="my-3 text-center">
             <button
@@ -33,7 +33,7 @@ const Login = () => {
               onClick={googleSigninHandler}
             >
               <span>
-                <i class="fab fa-google fw-bold text-primary pe-3"></i>
+                <i className="fab fa-google fw-bold text-primary pe-3"></i>
               </span>{" "}
               Sign in with Google
             </button>
@@ -41,12 +41,6 @@ const Login = () => {
         </div>
       </div>
     </div>
-
-    // <div className="d-flex justify-content-center align-content-center">
-    //   <button onClick={googleSigninHandler} className="">
-    //     Sign in with Google
-    //   </button>
-    // </div>
   );
 };
 

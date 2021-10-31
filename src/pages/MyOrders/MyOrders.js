@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
-  const email = "arif@gmail.com";
+  const { user } = useAuth();
 
   useEffect(() => {
     fetch("http://localhost:5000/orders")
@@ -10,7 +11,7 @@ const MyOrders = () => {
       .then((result) => {
         const myOrders = [];
         for (const data of result) {
-          if (data.userEmail == email) {
+          if (data.userEmail == user.email) {
             myOrders.push(data);
           }
         }
@@ -33,29 +34,29 @@ const MyOrders = () => {
       });
   };
 
-  const update = (id) => {
-    for (const singleOrder of orders) {
-      if (singleOrder._id == id) {
-        const updatedOrder = { ...singleOrder };
-        updatedOrder.status = "Approved";
-        console.log(orders);
-        fetch(`http://localhost:5000/orders/${id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updatedOrder),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            if (result.modifiedCount == 1) {
-              console.log(result);
-              alert("Updated Successfully.");
-            }
-          });
-      }
-    }
-  };
+  // const update = (id) => {
+  //   for (const singleOrder of orders) {
+  //     if (singleOrder._id == id) {
+  //       const updatedOrder = { ...singleOrder };
+  //       updatedOrder.status = "Approved";
+  //       console.log(orders);
+  //       fetch(`http://localhost:5000/orders/${id}`, {
+  //         method: "PUT",
+  //         headers: {
+  //           "content-type": "application/json",
+  //         },
+  //         body: JSON.stringify(updatedOrder),
+  //       })
+  //         .then((res) => res.json())
+  //         .then((result) => {
+  //           if (result.modifiedCount == 1) {
+  //             console.log(result);
+  //             alert("Updated Successfully.");
+  //           }
+  //         });
+  //     }
+  //   }
+  // };
 
   return (
     <div className="container">
@@ -72,9 +73,9 @@ const MyOrders = () => {
             <h3>{order.price}</h3>
           </div>
           <div className="d-flex">
-            <div>
+            {/* <div>
               <button onClick={() => update(order._id)}>{order.status}</button>
-            </div>
+            </div> */}
             <div>
               <button onClick={() => handleCancel(order.packageId)}>
                 cancel

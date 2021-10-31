@@ -9,7 +9,7 @@ const ManageOrders = () => {
       .then((data) => {
         setAllOrders(data);
       });
-  }, []);
+  }, [allOrders]);
 
   const handleDelete = (id) => {
     const url = `http://localhost:5000/orders/${id}`;
@@ -24,6 +24,30 @@ const ManageOrders = () => {
           setAllOrders(remaining);
         }
       });
+  };
+
+  const update = (id) => {
+    for (const singleOrder of allOrders) {
+      if (singleOrder._id == id) {
+        const updatedOrder = { ...singleOrder };
+        updatedOrder.status = "Approved";
+        console.log(allOrders);
+        fetch(`http://localhost:5000/orders/${id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedOrder),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result.modifiedCount == 1) {
+              console.log(result);
+              alert("Updated Successfully.");
+            }
+          });
+      }
+    }
   };
 
   return (
@@ -42,6 +66,11 @@ const ManageOrders = () => {
               <h3>{order.userName}</h3>
             </div>
             <div className="d-flex">
+              <div>
+                <button onClick={() => update(order._id)}>
+                  {order.status}
+                </button>
+              </div>
               <div>
                 <button onClick={() => handleDelete(order._id)}> Delete</button>
               </div>

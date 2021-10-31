@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
+import useAuth from "../../hooks/useAuth";
 
 const Order = () => {
+  const { user } = useAuth();
   const [pack, setPack] = useState([]);
   const { id } = useParams();
   const nameRef = useRef();
@@ -32,7 +34,7 @@ const Order = () => {
       price,
       status: "pending",
     };
-    const url = `http://localhost:5000/packages/${id}`;
+    const url = `http://localhost:5000/orders`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -65,6 +67,8 @@ const Order = () => {
               class="form-control"
               id="exampleFormControlInput1"
               ref={nameRef}
+              value={user.displayName || ""}
+              readOnly
             />
           </div>
           {/* email */}
@@ -77,6 +81,8 @@ const Order = () => {
               class="form-control"
               id="exampleFormControlInput1"
               ref={emailRef}
+              value={user.email || ""}
+              readOnly
             />
           </div>
           {/* address */}
@@ -88,6 +94,31 @@ const Order = () => {
               type="text"
               class="form-control"
               id="exampleFormControlInput1"
+              placeholder="Address"
+            />
+          </div>
+          {/* phone */}
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Phone Number"
+            />
+          </div>
+          {/* date */}
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Date
+            </label>
+            <input
+              type="date"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Date"
             />
           </div>
           {/* pacakge title */}
@@ -101,6 +132,7 @@ const Order = () => {
               id="exampleFormControlInput1"
               value={pack.title || ""}
               ref={titleRef}
+              readOnly
             />
           </div>
           {/* price */}
@@ -114,6 +146,7 @@ const Order = () => {
               id="exampleFormControlInput1"
               value={pack.price || ""}
               ref={priceRef}
+              readOnly
             />
           </div>
           <input type="submit" value="Place Order" />

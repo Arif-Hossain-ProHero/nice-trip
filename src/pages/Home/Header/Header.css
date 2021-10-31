@@ -1,5 +1,5 @@
 .carousel-container img {
-  height: 80vh;
+  height: 85vh;
 }
 .carousel-caption {
   top: 50%;
@@ -11,5 +11,12 @@
   background-color: beige;
 }
 .input-label {
-  background-color: green;
+  background-color: #6dc82b;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-container img {
+    height: 60vh;
+  }
 }

@@ -34,7 +34,7 @@ const AddPackage = () => {
 
   return (
     <div>
-      <h1>Add Package</h1>
+      <h1 className="text-center my-5">Add Package</h1>
       <div>
         <form onSubmit={handleSubmit}>
           <div className="container mx-auto row row-cols-1 row-cols-md-2 g-4">
@@ -109,11 +109,13 @@ const AddPackage = () => {
               />
             </div>
           </div>
-          <input
-            className="btn btn-primary"
-            type="submit"
-            value="Place Order"
-          />
+          <div className="text-center">
+            <input
+              className="btn btn-primary"
+              type="submit"
+              value="Place Order"
+            />
+          </div>
         </form>
       </div>
     </div>

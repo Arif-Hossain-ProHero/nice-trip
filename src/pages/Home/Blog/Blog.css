@@ -1,0 +1,7 @@
+.regular-btn {
+  background-color: #6dc82b;
+  color: white;
+}
+.regular-btn:hover {
+  background-color: rgb(58, 205, 50);
+}

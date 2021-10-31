@@ -1,4 +1,5 @@
 import React from "react";
+import "./Blog.css";
 
 const Blog = (props) => {
   const { img, title, description, date } = props.blog;
@@ -13,7 +14,7 @@ const Blog = (props) => {
         <div class="card-footer">
           <small class="text-muted">{date}</small>
         </div>
-        <button className="btn btn-primary">Read More</button>
+        <button className="btn regular-btn">Read More</button>
       </div>
     </div>
   );

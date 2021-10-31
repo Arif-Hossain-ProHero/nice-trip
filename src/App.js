@@ -9,6 +9,7 @@ import AddPackage from "./pages/AddPackage/AddPackage";
 import Login from "./pages/Login/Login";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Navbar></Navbar>
         <Switch>
           <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/home">
             <Home></Home>
           </Route>
           <PrivateRoute path="/packages/:id">
@@ -34,6 +38,9 @@ function App() {
           <PrivateRoute path="/add-package">
             <AddPackage></AddPackage>
           </PrivateRoute>
+          <Route to="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
         <Footer></Footer>
       </BrowserRouter>

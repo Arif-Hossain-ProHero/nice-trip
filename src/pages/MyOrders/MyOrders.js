@@ -19,71 +19,57 @@ const MyOrders = () => {
       });
   }, [orders]);
   //cancel handler
-  const handleCancel = (id) => {
-    const url = `http://localhost:5000/orders/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount == 1) {
-          alert("Deleted successfully");
-          const remaining = orders.filter((order) => order.packageId !== id);
-          setOrders(remaining);
-        }
-      });
+  const handleDelete = (id) => {
+    console.log(id);
+    const proceed = window.confirm("Are You Sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount == 1) {
+            alert("Deleted successfully");
+            const remaining = orders.filter((order) => order._id !== id);
+            setOrders(remaining);
+          }
+        });
+    }
   };
-
-  // const update = (id) => {
-  //   for (const singleOrder of orders) {
-  //     if (singleOrder._id == id) {
-  //       const updatedOrder = { ...singleOrder };
-  //       updatedOrder.status = "Approved";
-  //       console.log(orders);
-  //       fetch(`http://localhost:5000/orders/${id}`, {
-  //         method: "PUT",
-  //         headers: {
-  //           "content-type": "application/json",
-  //         },
-  //         body: JSON.stringify(updatedOrder),
-  //       })
-  //         .then((res) => res.json())
-  //         .then((result) => {
-  //           if (result.modifiedCount == 1) {
-  //             console.log(result);
-  //             alert("Updated Successfully.");
-  //           }
-  //         });
-  //     }
-  //   }
-  // };
 
   return (
     <div className="container">
-      <h1>MY ORDERS</h1>
-      {orders.map((order, index) => (
-        <div className="d-flex justify-content-between border">
-          <div>
-            <h3>
-              <span>{index + 1}</span>
-              {order.title}
-            </h3>
-          </div>
-          <div>
-            <h3>{order.price}</h3>
-          </div>
-          <div className="d-flex">
-            {/* <div>
-              <button onClick={() => update(order._id)}>{order.status}</button>
-            </div> */}
+      <h1 className="text-center my-5">MY ORDERS</h1>
+      {orders.length ? (
+        orders.map((order, index) => (
+          <div className="d-flex justify-content-between border  mb-3 p-3">
             <div>
-              <button onClick={() => handleCancel(order.packageId)}>
-                cancel
-              </button>
+              <h3>
+                <span className="pe-3">{index + 1}.</span>
+                {order.title}
+              </h3>
+            </div>
+            <div>
+              <h3 className="text-info">{order.price}</h3>
+            </div>
+            <div className="d-flex">
+              <div>
+                <button
+                  className="bg-danger border-0 text-white"
+                  onClick={() => handleDelete(order._id)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
+        ))
+      ) : (
+        <div className="text-center text-warning">
+          <h3>Opps! Your Cart is Empty</h3>
         </div>
-      ))}
+      )}
     </div>
   );
 };

@@ -53,109 +53,130 @@ const Order = () => {
   };
 
   return (
-    <div className="d-flex flex-md-row flex-column container">
-      <div className="w-50">
-        <h2>ORDER NOW</h2>
-        <form onSubmit={handleSubmit}>
-          {/* user name */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              User Name
-            </label>
+    <div className="container my-5">
+      <h2 className="text-center mb-5">ORDER NOW</h2>
+      <div className="d-flex flex-md-row flex-column">
+        <div className="w-50">
+          <form onSubmit={handleSubmit}>
+            {/* user name */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                User Name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                ref={nameRef}
+                value={user.displayName || ""}
+                readOnly
+              />
+            </div>
+            {/* email */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                ref={emailRef}
+                value={user.email || ""}
+                readOnly
+              />
+            </div>
+            {/* address */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Address
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Address"
+              />
+            </div>
+            {/* phone */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Phone Number
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Phone Number"
+              />
+            </div>
+            {/* date */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Date
+              </label>
+              <input
+                type="date"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Date"
+              />
+            </div>
+            {/* pacakge title */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Package Title
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                value={pack.title || ""}
+                ref={titleRef}
+                readOnly
+              />
+            </div>
+            {/* price */}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Price
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                value={pack.price || ""}
+                ref={priceRef}
+                readOnly
+              />
+            </div>
             <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              ref={nameRef}
-              value={user.displayName || ""}
-              readOnly
+              className="regular-btn border-0 p-2 rounded"
+              type="submit"
+              value="Place Order"
             />
-          </div>
-          {/* email */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleFormControlInput1"
-              ref={emailRef}
-              value={user.email || ""}
-              readOnly
-            />
-          </div>
-          {/* address */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Address
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Address"
-            />
-          </div>
-          {/* phone */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Phone Number
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Phone Number"
-            />
-          </div>
-          {/* date */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Date
-            </label>
-            <input
-              type="date"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="Date"
-            />
-          </div>
-          {/* pacakge title */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Package Title
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              value={pack.title || ""}
-              ref={titleRef}
-              readOnly
-            />
-          </div>
-          {/* price */}
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Price
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              value={pack.price || ""}
-              ref={priceRef}
-              readOnly
-            />
-          </div>
-          <input type="submit" value="Place Order" />
-        </form>
-      </div>
-      <div className="ms-3 w-50">
-        <h2>PACKAGE DETAILS</h2>
-        <img className="img-fluid" src={pack.img} alt="" />
-        <p>{pack.description}</p>
+          </form>
+        </div>
+        <div className="ms-3 w-50">
+          {/* <h2>PACKAGE DETAILS</h2> */}
+          <img className="img-fluid" src={pack.img} alt="" />
+          <h4 className="mt-2">
+            <span className="text-success">Package Name:</span> {pack.title}
+          </h4>
+          <p>{pack.description}</p>
+          <h4 className="mt-2">
+            <span className="text-success">Package Duration:</span>{" "}
+            {pack.packages}
+          </h4>
+          <h5>
+            <span className="text-success  pe-2">Price:</span>
+            {pack.price}
+          </h5>
+          <p>
+            <span className="text-success pe-2">Ratings:</span>
+            {pack.ratings}{" "}
+          </p>
+        </div>
       </div>
     </div>
   );

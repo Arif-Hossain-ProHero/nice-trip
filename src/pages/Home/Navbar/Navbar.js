@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import "./Navbar.css";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
     return logOut();
   };
   return (
-    <div className="navbar-container">
+    <div className="navbar-container pb-2">
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <button
@@ -32,30 +32,52 @@ const Navbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/" className="nav-link active fw-bold text-success">
-                  Home
+                  HOME
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/my-orders" className="nav-link text-success fw-bold">
-                  My Orders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/manage-orders"
-                  className="nav-link text-success fw-bold"
-                >
-                  Manage Orders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/add-package"
-                  className="nav-link text-success fw-bold"
-                >
-                  Add Package
-                </Link>
-              </li>
+              {user.email ? (
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link text-success fw-bold"
+                      to="/my-orders"
+                      activeStyle={{
+                        backgroundColor: "rgb(232, 223, 223)",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      MY ORDER
+                    </NavLink>
+                  </li>
+
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link text-success fw-bold"
+                      to="/manage-orders"
+                      activeStyle={{
+                        backgroundColor: "rgb(232, 223, 223)",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      MANAGE ORDER
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link text-success fw-bold"
+                      to="/add-package"
+                      activeStyle={{
+                        backgroundColor: "rgb(232, 223, 223)",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      ADD PACKAGE
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                ""
+              )}
             </ul>
             <div className="d-flex navbar-nav mb-2 mb-lg-0 me-5">
               {user.email ? (

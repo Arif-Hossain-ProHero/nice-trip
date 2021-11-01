@@ -2,7 +2,6 @@
   background-color: white;
 }
 .nav-link:hover {
-  background-color: rgb(34, 33, 33);
-  border-radius: 5px;
-  color: white;
+  border-bottom: 2px solid palevioletred;
+  overflow: hidden;
 }

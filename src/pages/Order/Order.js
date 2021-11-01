@@ -12,7 +12,7 @@ const Order = () => {
   const titleRef = useRef();
   //fetching single package
   useEffect(() => {
-    const url = `http://localhost:5000/packages/${id}`;
+    const url = `https://gruesome-phantom-41535.herokuapp.com/packages/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -34,7 +34,7 @@ const Order = () => {
       price,
       status: "pending",
     };
-    const url = `http://localhost:5000/orders`;
+    const url = `https://gruesome-phantom-41535.herokuapp.com/orders`;
     fetch(url, {
       method: "POST",
       headers: {

@@ -6,7 +6,7 @@ const MyOrders = () => {
   const { user } = useAuth();
   //fetch all data from orders API
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://gruesome-phantom-41535.herokuapp.com/orders")
       .then((res) => res.json())
       .then((result) => {
         const myOrders = [];
@@ -23,7 +23,7 @@ const MyOrders = () => {
     console.log(id);
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://gruesome-phantom-41535.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -41,6 +41,17 @@ const MyOrders = () => {
   return (
     <div className="container">
       <h1 className="text-center my-5">MY ORDERS</h1>
+      <div className="d-flex justify-content-between border bg-primary text-white  mb-3 p-3">
+        <div>
+          <h4>Package Name</h4>
+        </div>
+        <div>
+          <h4>Price</h4>
+        </div>
+        <div className="d-flex">
+          <h4>Action</h4>
+        </div>
+      </div>
       {orders.length ? (
         orders.map((order, index) => (
           <div className="d-flex justify-content-between border  mb-3 p-3">

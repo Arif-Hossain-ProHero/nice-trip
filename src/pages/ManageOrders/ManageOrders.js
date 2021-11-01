@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const ManageOrders = () => {
   const [allOrders, setAllOrders] = useState([]);
+  const { isLoading, setIsLoading } = useAuth();
+
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://gruesome-phantom-41535.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         setAllOrders(data);
@@ -14,7 +17,8 @@ const ManageOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      setIsLoading(true);
+      const url = `https://gruesome-phantom-41535.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -25,6 +29,9 @@ const ManageOrders = () => {
             const remaining = allOrders.filter((order) => order._id !== id);
             setAllOrders(remaining);
           }
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     }
   };
@@ -34,8 +41,8 @@ const ManageOrders = () => {
       if (singleOrder._id == id) {
         const updatedOrder = { ...singleOrder };
         updatedOrder.status = "Approved";
-        console.log(allOrders);
-        fetch(`http://localhost:5000/orders/${id}`, {
+        setIsLoading(true);
+        fetch(`https://gruesome-phantom-41535.herokuapp.com/orders/${id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -48,14 +55,40 @@ const ManageOrders = () => {
               console.log(result);
               alert("Updated Successfully.");
             }
+          })
+          .finally(() => {
+            setIsLoading(false);
           });
       }
     }
   };
+  //spinner
+  if (isLoading) {
+    return (
+      <div className="d-flex justify-content-center my-24">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container my-5">
       <h1 className="text-center mb-4">Manage All Orders</h1>
+
+      <div className="d-flex justify-content-between border bg-primary text-white  mb-3 p-3">
+        <div>
+          <h4>Package Name</h4>
+        </div>
+        <div>
+          <h4>User Name</h4>
+        </div>
+        <div className="d-flex">
+          <h4>Status</h4>
+        </div>
+      </div>
+
       <div>
         {allOrders.length ? (
           allOrders.map((order, index) => (
@@ -67,7 +100,7 @@ const ManageOrders = () => {
                 </h3>
               </div>
               <div>
-                <h3>{order.userName}</h3>
+                <h3 className="text-info">{order.userName.toUpperCase()}</h3>
               </div>
               <div className="d-flex">
                 <div>

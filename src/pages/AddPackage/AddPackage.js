@@ -15,7 +15,7 @@ const AddPackage = () => {
     const img = imageRef.current.value;
 
     const newPackages = { title, description, packages, price, img };
-    fetch("http://localhost:5000/packages", {
+    fetch("https://gruesome-phantom-41535.herokuapp.com/packages", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -112,9 +112,9 @@ const AddPackage = () => {
           {/* submit button */}
           <div className="text-center">
             <input
-              className="btn btn-primary"
+              className="btn regular-btn"
               type="submit"
-              value="Place Order"
+              value="ADD PACKAGE"
             />
           </div>
         </form>
